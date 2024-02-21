@@ -36,3 +36,91 @@
     transform: rotate(360deg);
   }
 }
+
+/* JSXEditor.css */
+
+.jsx-editor-container {
+  display: flex;
+}
+
+.editor,
+.preview {
+  flex: 1;
+  padding: 10px;
+}
+
+textarea {
+  width: 100%;
+  height: 200px;
+  margin-bottom: 10px;
+}
+
+.preview-content {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.preview-content div {
+  margin-bottom: 10px;
+}
+
+/* Styles pour simuler VS Code */
+.vscode-textarea {
+  font-family: "Fira Code", monospace;
+  font-size: 14px;
+  /* color: #c5c8c6; */
+  background-color: #1e1e1e;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  height: 300px;
+  resize: none;
+  outline: none;
+}
+
+.vscode-textarea::placeholder {
+  color: #8e8e8e;
+}
+
+/* CodePlayground.css */
+.container {
+  display: flex;
+  height: 60vh;
+  overflow: hidden;
+}
+
+.sidebar {
+  width: 50%;
+  background-color: #282c34; /* Couleur de fond utilisée par Prism */
+  padding: 20px;
+  color: white; /* Couleur du texte dans la barre latérale */
+}
+
+.sidebar button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-bottom: 10px; /* Espacement entre les boutons */
+}
+
+.sidebar button:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Effet de survol */
+}
+
+.tab-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.preview {
+  border-left: 1px solid #ccc; /* Séparation entre la barre latérale et la prévisualisation */
+  padding: 20px;
+}
+
+.codeblock {
+  height: 40vh;
+}
