@@ -12,6 +12,7 @@ ol {
 /* Css "General" */
 @import url("./general/navBar.css");
 @import url("./general/footer.css");
+@import url("./general/pagination.css");
 
 /* Css Home Page */
 @import url("./pageHome/pageHome.css");
@@ -26,3 +27,8 @@ ol {
 @import url("./pageArticles/pageArticle.css");
 @import url("./pageArticles/searchBar.css");
 @import url("./pageArticles/heroBannersArticle.css");
+
+/* Css Playground Page */
+@import url("./pagePlayground/playgroundGrid.css");
+@import url("./pagePlayground/pagePlayground.css");
+@import url("./pagePlayground/filter.css");

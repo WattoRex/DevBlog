@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom'; // Importez Link depuis react-router-dom
 import CodePreview from "../general/CodePreview"
 
-function LastCssProjects() {
+const LastCssProjects = () => {
     const [cssProjects, setCssProjects] = useState([]);
 
     useEffect(() => {

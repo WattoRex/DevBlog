@@ -1,0 +1,65 @@
+.PaginationContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  scale: 0.8;
+}
+
+.PaginationButton {
+  padding: 8px 12px;
+  margin: 0 5px;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: #92c9b175;
+  color: #68806f;
+  border: none;
+  border-radius: 4px;
+}
+
+.PaginationButton:hover {
+  background-color: rgba(146, 229, 162, 0.8);
+}
+
+.PaginationButton:disabled {
+  background-color: #92c9b125;
+  color: #68806f70;
+  cursor: not-allowed;
+  transition: background-color 0.3s;
+}
+
+.PaginationActive {
+  background-color: rgba(146, 229, 162, 1);
+  color: #ffffff;
+}
+
+/* Style pour le filtre de nombre de produits par page */
+.PageSizeSelector {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.SizeSelectorLabel {
+  margin-right: 10px;
+  font-size: 14px;
+  color: #447444; /* couleur similaire à PaginationButton */
+}
+
+.SizeSelectorSelect {
+  padding: 5px;
+  font-size: 14px;
+  background-color: #92c9b175; /* couleur similaire à PaginationButton */
+  color: #447444; /* couleur similaire à PaginationButton */
+  border: none;
+  border-radius: 4px;
+}
+
+.SizeSelectorLabel p {
+  color: black;
+}
+
+@media screen and (min-width: 790px) {
+  .PaginationContainer {
+    scale: 1;
+  }
+}

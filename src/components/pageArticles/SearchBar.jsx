@@ -1,7 +1,7 @@
 // SearchBar.js
 import React from 'react';
 
-const SearchBar = ({ searchTerm, onSearch, holderText }) => {
+const SearchBar = ({ searchTerm, onSearch, holderText, taille }) => {
     return (
         <div className="group">
             <svg className="iconSB" aria-hidden="true" viewBox="0 0 24 24">
@@ -10,6 +10,7 @@ const SearchBar = ({ searchTerm, onSearch, holderText }) => {
                 </g>
             </svg>
             <input
+                style={{ width: `${taille}` }}
                 className='input'
                 type="text"
                 placeholder={holderText}

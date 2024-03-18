@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-function LastProjects() {
+const LastProjects = () => {
     const [projects, setProjects] = useState([]);
 
     useEffect(() => {

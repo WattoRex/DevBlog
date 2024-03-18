@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-function LastArticle() {
+const LastArticle = () => {
     const [lastArticle, setLastArticle] = useState(null);
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 

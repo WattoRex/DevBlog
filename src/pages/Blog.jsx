@@ -3,12 +3,12 @@ import NavBar from '../components/general/NavBar';
 import Footer from '../components/general/Footer';
 import AllArticle from '../components/pageArticles/AllArticles';
 import HeroBanner from '../components/pageArticles/HeroBannerArticle';
-import Bubble from '../components/pageHome/Bubble';
+import Bubble from '../components/pagePlayground/BubblePlayground';
 
 const Blog = () => {
     const [searchTerm, setSearchTerm] = useState('');
 
-    // Gestion de la recherche
+    // Gestion de la bar de recherche
     const handleSearch = (event) => {
         setSearchTerm(event.target.value);
     };
@@ -26,10 +26,10 @@ const Blog = () => {
                 </div>
 
                 {/* Animation */}
-                <div className='bubbleContainer' >
+                <div className='bubbleContainer Playground' >
                     <Bubble />
                 </div>
-                <div className='bubbleContainer2'>
+                <div className='bubbleContainer2 Playground2'>
                     <Bubble />
                 </div>
             </div>

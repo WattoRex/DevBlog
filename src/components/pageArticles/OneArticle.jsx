@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import NavBar from '../general/NavBar';
 
-function ArticleComponent() {
+const ArticleComponent = () => {
     const [articleData, setArticleData] = useState(null);
 
     useEffect(() => {

@@ -5,7 +5,7 @@
   position: absolute;
   top: 10vh;
   left: 10vh;
-  height: 100%;
+  /* height: 100%; */
 }
 
 .bubbleContainer2 {
@@ -241,6 +241,17 @@
     transform: scaleY(-1);
     top: 36vh;
   }
+
+  /* Css des bulles pour la page Blog */
+
+  /* Css des bulles pour la page Project */
+
+  /* Css des bulles pour la page Playground */
+  .Playground2 {
+    top: -32vh;
+  }
+
+  /* Css des bulles pour la page About */
 }
 
 /*  Mode bureau version vertical */
@@ -249,7 +260,7 @@
   .bubbleContainer2 {
     transform: scale(0.75);
     display: block;
-    top: 8vh;
+    top: 6vh;
   }
 
   .bubbleContainer2 {
@@ -262,4 +273,16 @@
   .bubbleContainer {
     left: 5vh;
   }
+
+  /* Css des bulles pour la page Blog */
+
+  /* Css des bulles pour la page Project */
+
+  /* Css des bulles pour la page Playground */
+  .Playground2 {
+    top: -32vh;
+    right: 8vh;
+  }
+
+  /* Css des bulles pour la page About */
 }

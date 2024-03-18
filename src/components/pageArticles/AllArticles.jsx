@@ -38,7 +38,7 @@ const AllArticles = ({ searchTerm }) => {
             let apiUrl = `${process.env.REACT_APP_STRAPI_API_URL}/api/articles?populate=*`;
 
             if (searchTerm) {
-                apiUrl += `&filters[Titre][$containsi]=${searchTerm}`;
+                apiUrl += `&filters[Titre][$containsi]=${searchTerm}` && `&filters[Description][$containsi]=${searchTerm}` && `&filters[tags][TagName][$containsi]=${searchTerm}`;
             }
 
             const response = await axios.get(apiUrl);

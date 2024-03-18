@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-function BubbleContainer() {
+const BubbleContainer = () => {
     const [numberOfBubbles, setNumberOfBubbles] = useState(14);
 
     useEffect(() => {

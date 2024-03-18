@@ -11,7 +11,7 @@ function SkillCard({ title, description }) {
 }
 
 // Composant principal
-function SkillsComponent() {
+const SkillsComponent = () => {
     return (
         <div className="skills-container">
             <h2>Mes compétences en développement web</h2>

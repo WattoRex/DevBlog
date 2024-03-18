@@ -1,0 +1,24 @@
+.PlaygroundGridContainer {
+  display: flex;
+  flex-direction: column;
+  /* width: 91vw; */
+  padding: 0.2vh 1.8vh 0.8vh 1.8vh;
+}
+
+/* Media Query for Desktop */
+@media screen and (min-width: 1024px) {
+  .pagePlaygroundContainer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .three-col {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1vh;
+  }
+
+  .three-col .codePreview {
+    height: 26vh;
+  }
+}
