@@ -56,7 +56,7 @@ textarea {
 }
 
 .preview-content {
-  border: 1px solid #ccc;
+  /* border: 1px solid #ccc; */
   padding: 10px;
 }
 
@@ -65,35 +65,56 @@ textarea {
 }
 
 /* Styles pour simuler VS Code */
-.vscode-textarea {
-  font-family: "Fira Code", monospace;
-  font-size: 14px;
-  /* color: #c5c8c6; */
-  background-color: #1e1e1e;
-  border: none;
-  padding: 10px;
-  width: 100%;
-  height: 300px;
-  resize: none;
-  outline: none;
-}
-
-.vscode-textarea::placeholder {
-  color: #8e8e8e;
-}
-
-/* CodePlayground.css */
 .container {
   display: flex;
-  height: 60vh;
-  overflow: hidden;
+  justify-content: center;
+  /* align-items: center; */
+  /* height: 20vh; */
 }
 
 .sidebar {
   width: 50%;
-  background-color: #282c34; /* Couleur de fond utilisée par Prism */
-  padding: 20px;
-  color: white; /* Couleur du texte dans la barre latérale */
+  /* background-color: #272822; */
+  /* padding: 10px 0px; */
+  color: white;
+  border-radius: 5px;
+}
+
+.Bouton {
+  /* background-color: #272822; */
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row-reverse;
+  position: relative;
+  right: 1.2vh;
+  top: 0.5vh;
+}
+
+.A,
+.B {
+  width: 10vh;
+  display: flex;
+  border: 2px solid #5555556b;
+  border-bottom: 0px;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #272822;
+  clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
+  gap: 1vh;
+}
+
+.A svg,
+.B svg {
+  position: relative;
+  bottom: 2px;
+}
+
+.A:hover,
+.B:hover {
+  transform: translateY(-0.5vh);
+  transition: 0.2s;
+  border-radius: 0.5px;
 }
 
 .sidebar button {
@@ -102,12 +123,12 @@ textarea {
   color: white;
   padding: 10px 20px;
   cursor: pointer;
-  margin-bottom: 10px; /* Espacement entre les boutons */
+  background-color: #272822;
 }
 
-.sidebar button:hover {
-  background-color: rgba(255, 255, 255, 0.1); /* Effet de survol */
-}
+/* .sidebar button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+} */
 
 .tab-content {
   flex: 1;
@@ -117,10 +138,63 @@ textarea {
 }
 
 .preview {
-  border-left: 1px solid #ccc; /* Séparation entre la barre latérale et la prévisualisation */
-  padding: 20px;
+  /* border: 1px solid navy; */
+}
+
+.preview-container {
+  border-left: 4px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.preview-content {
+  text-align: center;
+  /* Ajoutez d'autres styles si nécessaire */
 }
 
 .codeblock {
   height: 40vh;
+}
+
+.codeblock-container {
+  position: relative;
+}
+
+.copy-button {
+  position: absolute;
+  top: 5px;
+  right: 2vh;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 20;
+}
+
+.copy-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/*  */
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  /* border-radius: 10px; */
+  background-color: #f5f5f5;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  background-color: #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb {
+  /* border-radius: 10px; */
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #555;
+}
+
+pre[class*="language-"] {
+  margin: 0;
 }

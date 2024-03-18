@@ -1,0 +1,142 @@
+/* —————— Style du menu de Navigation —————— */
+.navBarContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 6vh;
+  border-bottom: 1px solid #92c9b144;
+  background-color: #ffffffff;
+}
+
+.logoContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1vh;
+  margin-left: 2vh;
+}
+
+.logoContainer img {
+  height: 10vh;
+  max-height: 122px;
+}
+
+.navMenuContainer {
+  margin-right: 2vh;
+}
+
+.navMenu li,
+.navMenu a {
+  display: none;
+}
+
+/* —————— Style et animation du menu Hamburger —————— */
+.hamburger {
+  display: block;
+  margin-left: auto;
+  margin-right: 2vh;
+  cursor: pointer;
+}
+
+.hamburger .line {
+  width: 25px;
+  height: 1px;
+  background-color: #1f1f1f;
+  display: block;
+  margin: 7px auto;
+  transition: all 0.3s ease-in-out;
+}
+
+.hamburger-active {
+  transition: all 0.3s ease-in-out;
+  transition-delay: 0.6s;
+  transform: rotate(45deg);
+}
+
+.hamburger-active .line:nth-child(2) {
+  width: 0px;
+}
+
+.hamburger-active .line:nth-child(1),
+.hamburger-active .line:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+.hamburger-active .line:nth-child(1) {
+  transform: translateY(12px);
+}
+
+.hamburger-active .line:nth-child(3) {
+  transform: translateY(-5px) rotate(90deg);
+}
+
+/* —————— Style et animation du menu format mobile —————— */
+.menubar {
+  position: fixed;
+  top: 0;
+  left: -60%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 60%;
+  height: 100vh;
+  padding: 20% 0;
+  background: rgba(255, 255, 255);
+  transition: all 0.5s ease-in;
+  z-index: 2;
+  background: #92c9b1; /* Remplacez la couleur de fond */
+}
+
+.active {
+  left: 0;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.menubar ul {
+  padding: 0;
+  list-style: none;
+}
+
+.menubar ul li {
+  margin-bottom: 32px;
+}
+
+.menubar ul li a {
+  text-decoration: none;
+  color: #000;
+  font-size: 95%;
+  font-weight: 400;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.menubar ul li a:hover {
+  background: linear-gradient(to right, #92c9b1, #168353);
+}
+
+/* —————— Style media querrie format Tablette / PC —————— */
+@media screen and (min-width: 790px) {
+  .hamburger {
+    display: none;
+    cursor: pointer;
+  }
+
+  /* Menu Nav Bureau */
+  .navMenu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1vh;
+  }
+
+  .navMenu li,
+  .navMenu a {
+    color: black;
+    list-style: none;
+    text-decoration: none;
+    display: block;
+  }
+}

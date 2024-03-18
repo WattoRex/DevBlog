@@ -1,0 +1,100 @@
+/* CSS conteneur */
+.last-articlePage {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.last-article {
+  border-radius: 10px;
+  margin: 5px;
+  padding: 5px;
+  width: 88vw;
+  text-align: center;
+  background-color: rgba(201, 237, 198, 0.2);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* CSS contenue */
+.last-articlePage .last-articleTitle {
+  align-self: self-start;
+  margin-left: 1vh;
+}
+
+.last-article h2 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.last-article p {
+  color: #666;
+  margin-bottom: 10px;
+  text-align: justify;
+}
+
+.last-article p.tags {
+  font-size: 0.75rem;
+  color: #9ba59d;
+  border-top: 1px solid #9ba59d;
+  padding-top: 0.6vh;
+  /* display: flex;
+  flex-direction: row-reverse; */
+}
+
+.last-article p.date,
+.last-article p.description {
+  font-size: 0.9rem;
+  color: #43a450;
+}
+
+.last-article img {
+  max-width: 88vw;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.last-article .read-more {
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+  border-radius: 20px;
+  padding: 10px 12px;
+  cursor: pointer;
+  background-color: rgba(146, 229, 162, 0.75);
+}
+
+.read-more:hover {
+  background-color: rgba(146, 229, 162, 1);
+}
+
+/* ------ Mode Bureau Desktop ------ */
+@media screen and (min-width: 1024px) {
+  .last-articlePage {
+    width: 68%;
+  }
+
+  .last-article {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+  }
+
+  .last-article-container {
+    margin: 1vh;
+  }
+
+  .last-article img {
+    max-width: 25%;
+    max-height: 18vh;
+    margin-bottom: 0px;
+    align-self: center;
+  }
+
+  .last-article p.tags {
+    padding-top: 0.2vh;
+  }
+}

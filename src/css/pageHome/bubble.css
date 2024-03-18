@@ -1,0 +1,265 @@
+/* CSS container */
+.bubbleContainer {
+  display: none;
+  z-index: -1;
+  position: absolute;
+  top: 10vh;
+  left: 10vh;
+  height: 100%;
+}
+
+.bubbleContainer2 {
+  display: none;
+  z-index: -1;
+  position: absolute;
+  top: 30vh;
+  right: 10vh;
+  height: 100%;
+}
+
+/*  Css Des bulles de gauche */
+.bubbleContainer .bubble,
+.bubbleContainer2 .bubble {
+  position: absolute;
+  width: 15vh;
+  min-width: 125px;
+  height: 15vh;
+  min-height: 125px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 25px rgba(255, 255, 255, 0.25);
+  animation: animate_4010 8s ease-in-out infinite;
+}
+
+.bubbleContainer2 .bubble span {
+  transform: scaleY(-1);
+}
+
+.bubble:nth-child(2) {
+  position: relative;
+  zoom: 0.45;
+  left: -1vh; /* Converti de -10px à -1vh */
+  top: -10vh; /* Converti de -100px à -10vh */
+  animation-delay: -4s;
+}
+
+.bubble:nth-child(3) {
+  position: relative;
+  zoom: 0.45;
+  right: -8vh; /* Converti de -80px à -8vh */
+  top: -30vh; /* Converti de -300px à -30vh */
+  animation-delay: -6s;
+}
+
+.bubble:nth-child(4) {
+  position: relative;
+  zoom: 0.35;
+  left: -12vh; /* Converti de -120px à -12vh */
+  bottom: -20vh; /* Converti de -200px à -20vh */
+  animation-delay: -3s;
+}
+
+.bubble:nth-child(5) {
+  position: relative;
+  zoom: 0.5;
+  left: 0; /* Pas de conversion nécessaire pour 0 */
+  top: 20vh; /* Converti de 200px à 20vh */
+  animation-delay: -5s;
+}
+
+.bubble:nth-child(6) {
+  position: relative;
+  zoom: 0.65;
+  right: -8vh; /* Converti de -80px à -8vh */
+  top: 30vh; /* Converti de 300px à 30vh */
+  animation-delay: -6s;
+}
+
+.bubble:nth-child(7) {
+  position: relative;
+  zoom: 0.35;
+  left: 7.5vh; /* Converti de 75px à 7.5vh */
+  bottom: -45vh; /* Converti de -450px à -45vh */
+  animation-delay: -3s;
+}
+
+.bubble:nth-child(8) {
+  position: relative;
+  zoom: 0.5;
+  left: 7.5vh; /* Converti de 75px à 7.5vh */
+  top: 27.5vh; /* Converti de 275px à 27.5vh */
+  animation-delay: -5s;
+}
+
+.bubble:nth-child(9) {
+  position: relative;
+  zoom: 0.65;
+  right: -8vh; /* Converti de -80px à -8vh */
+  top: 40vh; /* Converti de 400px à 40vh */
+  animation-delay: -6s;
+}
+
+.bubble:nth-child(10) {
+  position: relative;
+  zoom: 0.5;
+  left: -10vh; /* Converti de -100px à -10vh */
+  bottom: -30vh; /* Converti de -300px à -30vh */
+  animation-delay: -3s;
+}
+
+.bubble:nth-child(11) {
+  position: relative;
+  zoom: 0.75;
+  left: 0; /* Pas de conversion nécessaire pour 0 */
+  top: 42vh; /* Converti de 420px à 42vh */
+  animation-delay: -5s;
+}
+
+.bubble:nth-child(12) {
+  position: relative;
+  zoom: 0.65;
+  right: -8vh; /* Converti de -80px à -8vh */
+  top: 32.5vh; /* Converti de 325px à 32.5vh */
+  animation-delay: -6s;
+}
+
+.bubble:nth-child(13) {
+  position: relative;
+  zoom: 0.9;
+  left: -3vh; /* Converti de -30px à -3vh */
+  bottom: -30vh; /* Converti de -300px à -30vh */
+  animation-delay: -2s;
+}
+
+.bubble:nth-child(14) {
+  position: relative;
+  zoom: 0.35;
+  left: 0; /* Pas de conversion nécessaire pour 0 */
+  top: 60vh; /* Converti de 600px à 60vh */
+  animation-delay: -5s;
+}
+
+@keyframes animate_4010 {
+  0%,
+  100% {
+    transform: translateY(-2vh);
+  }
+
+  50% {
+    transform: translateY(2vh);
+  }
+}
+
+.bubble::before {
+  content: "";
+  position: absolute;
+  top: 50px;
+  left: 45px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #fff;
+  z-index: 10;
+  filter: blur(2px);
+}
+
+.bubble::after {
+  content: "";
+  position: absolute;
+  top: 80px;
+  left: 80px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  z-index: 10;
+  filter: blur(2px);
+}
+
+.bubble span {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.bubble span:nth-child(1) {
+  inset: 10px;
+  border-left: 15px solid #8cb369; /* Vert clair */
+  filter: blur(8px);
+}
+
+.bubble span:nth-child(2) {
+  inset: 10px;
+  border-right: 15px solid #68a06e; /* Vert moyen */
+  filter: blur(8px);
+}
+
+.bubble span:nth-child(3) {
+  inset: 10px;
+  border-top: 15px solid #3e8c75; /* Vert foncé */
+  filter: blur(8px);
+}
+
+.bubble span:nth-child(4) {
+  inset: 30px;
+  border-left: 15px solid #68a06e; /* Vert moyen */
+  filter: blur(12px);
+}
+
+.bubble span:nth-child(5) {
+  inset: 10px;
+  border-bottom: 10px solid #fff;
+  filter: blur(8px);
+  transform: rotate(330deg);
+}
+
+/* Mode Bureau */
+@media screen and (min-width: 720px) {
+  .bubbleContainer,
+  .bubbleContainer2 {
+    display: block;
+    transform: scale(0.85);
+    top: 28vh;
+  }
+
+  .bubbleContainer2 {
+    top: 72vh;
+    transform: scaleX(-0.85);
+    transform: scaleY(-0.85);
+  }
+}
+
+/* Mode Bureau */
+@media screen and (min-width: 1025px) {
+  .bubbleContainer,
+  .bubbleContainer2 {
+    transform: scale(1);
+    display: block;
+    top: 16vh;
+  }
+
+  .bubbleContainer2 {
+    transform: scaleX(-1);
+    transform: scaleY(-1);
+    top: 36vh;
+  }
+}
+
+/*  Mode bureau version vertical */
+@media screen and (min-width: 1025px) and (orientation: portrait) {
+  .bubbleContainer,
+  .bubbleContainer2 {
+    transform: scale(0.75);
+    display: block;
+    top: 8vh;
+  }
+
+  .bubbleContainer2 {
+    transform: scaleX(-0.75);
+    transform: scaleY(-0.75);
+    top: 18vh;
+    right: 6vh;
+  }
+
+  .bubbleContainer {
+    left: 5vh;
+  }
+}

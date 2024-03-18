@@ -1,0 +1,28 @@
+@import url("./reset/reset.css");
+
+/* Article */
+ul {
+  list-style: inside;
+}
+
+ol {
+  list-style: decimal;
+}
+
+/* Css "General" */
+@import url("./general/navBar.css");
+@import url("./general/footer.css");
+
+/* Css Home Page */
+@import url("./pageHome/pageHome.css");
+@import url("./pageHome/heroBanners.css");
+@import url("./pageHome/principalSkills.css");
+@import url("./pageHome/lastarticle.css");
+@import url("./pageHome/lastProjetcs.css");
+@import url("./pageHome/lastProjetcCSS.css");
+@import url("./pageHome/bubble.css");
+
+/* Css Article Page */
+@import url("./pageArticles/pageArticle.css");
+@import url("./pageArticles/searchBar.css");
+@import url("./pageArticles/heroBannersArticle.css");

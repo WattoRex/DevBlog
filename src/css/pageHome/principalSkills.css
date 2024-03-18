@@ -1,0 +1,60 @@
+.skills-container {
+  display: flex;
+  flex-direction: column;
+  width: 91vw;
+}
+
+.skill-cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+}
+
+/* CSS carte */
+.skill-card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-top: 1vh;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(146, 229, 162, 0.2);
+  border-bottom: 5px solid transparent;
+  transition: transform 0.4s ease-in-out;
+}
+
+/* Hover bordure bas de carte */
+.skill-card:hover {
+  border-color: rgba(146, 229, 162, 1);
+}
+
+.skill-card h3 {
+  color: #333;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.skill-card p {
+  color: #666;
+  font-size: 1rem;
+  text-align: justify;
+  width: 90%;
+  align-self: center;
+}
+
+/* ------ Mode Bureau Desktop ------ */
+@media screen and (min-width: 1024px) {
+  .skills-container {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+  }
+
+  .skill-cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2vh;
+  }
+}

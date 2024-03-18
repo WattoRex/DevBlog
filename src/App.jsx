@@ -1,17 +1,30 @@
-// App.jsx
+// eslint-disable-next-line
+import React, { useEffect } from "react";
+import Chemin from "./context/routes";
+import "./css/index.css";
+// import ReactGA from './configGA';
+// import { hydrate, render } from "react-dom";
 
-import React from "react";
-import JSXEditor from "./components/JsxEditor";
-import Editor from "./components/Editor";
+function App() {
+  // useEffect(() => {
+  //   // Suivi de page pour toutes les pages de l'application
+  //   ReactGA.send({ hitType: "pageview", page: window.location.pathname + window.location.search });
+  // }, []);
 
-import "./App.css";
-const App = () => {
   return (
-    <div>
-      <h1>Éditeur JSX</h1>
-      <Editor />
+    <div className="App">
+      <Chemin />
     </div>
   );
-};
+}
+
+
+// const rootElement = document.getElementById("root");
+
+// if (rootElement.hasChildNodes()) {
+//   hydrate(<App />, rootElement);
+// } else {
+//   render(<App />, rootElement);
+// }
 
 export default App;
