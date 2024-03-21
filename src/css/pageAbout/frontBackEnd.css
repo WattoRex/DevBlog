@@ -1,0 +1,118 @@
+.frontEnd {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18vh;
+  width: 91vw;
+}
+
+.backEnd {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
+  width: 91vw;
+}
+
+.animationResponsive {
+  position: relative;
+  top: 6vh;
+}
+
+.animationServer {
+  position: relative;
+  align-self: center;
+  justify-self: center;
+  transform: scale(0.8);
+}
+
+/* CSS section */
+.front-end-section {
+  margin-bottom: 40px;
+  text-align: justify;
+}
+
+.front-end-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1vh;
+}
+
+.front-end-section p {
+  color: #333;
+  margin-bottom: 0.4vh;
+}
+
+.front-end-section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1vh;
+  margin-top: 2vh;
+}
+
+.front-end-section ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.front-end-section ul li {
+  background-color: #257c14d8;
+  color: #fff;
+  font-size: 0.95rem;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.front-end-section ul li:hover {
+  background-color: #000000;
+  color: #ffffff;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.front-end-section ul li img {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+/* ------ Mode Bureau Desktop ------ */
+@media screen and (min-width: 1024px) {
+  .frontEnd {
+    display: grid;
+    grid-template-columns: 1fr 0.4fr;
+    margin-bottom: 0vh;
+    width: 50%;
+  }
+
+  .animationResponsive {
+    top: 0vh;
+    transform: scale(1.4);
+  }
+
+  .backEnd {
+    display: grid;
+    grid-template-columns: 0.4fr 1fr;
+    width: 50%;
+  }
+}
+
+/*  Mode bureau version vertical */
+@media screen and (min-width: 1025px) and (orientation: portrait) {
+  .frontEnd {
+    width: 90%;
+  }
+
+  .animationResponsive {
+    transform: scale(1);
+  }
+
+  .backEnd {
+    width: 90%;
+  }
+}

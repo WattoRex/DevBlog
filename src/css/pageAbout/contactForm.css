@@ -1,0 +1,81 @@
+.me-contacter-container {
+  width: 91vw;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.me-contacter-container h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.me-contacter-container label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.me-contacter-container input[type="text"],
+.me-contacter-container input[type="email"],
+.me-contacter-container textarea {
+  color: black;
+  opacity: 0.75;
+  width: 100%;
+  height: 2vh;
+  border: none;
+  border-radius: 4px;
+}
+
+.me-contacter-container textarea {
+  height: 12vh;
+  resize: none;
+}
+
+.me-contacter-container .form-submit {
+  background-color: rgba(146, 229, 162, 0.75);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100.5%;
+  height: 2vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.me-contacter-container .form-submit:hover {
+  background-color: rgba(146, 229, 162, 1);
+}
+
+.group-nom-prenom {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2vh;
+  width: 100%;
+}
+
+/* ------ Mode Tablet ------*/
+
+/* ------ Mode Bureau Desktop ------ */
+@media screen and (min-width: 1024px) {
+  .me-contacter-container {
+    width: 50%;
+  }
+
+  .me-contacter-container form {
+    width: 80%;
+    align-self: center;
+  }
+}
+
+/*  Mode bureau version vertical */
+@media screen and (min-width: 1025px) and (orientation: portrait) {
+  .me-contacter-container {
+    width: 90%;
+  }
+}

@@ -37,3 +37,8 @@ ol {
 
 /* Css About Page */
 @import url("./pageAbout/pageAbout.css");
+@import url("./pageAbout/frontBackEnd.css");
+@import url("./pageAbout/responsiveAnim.css");
+@import url("./pageAbout/serverAnim.css");
+@import url("./pageAbout/herroBannerAbout.css");
+@import url("./pageAbout/contactForm.css");
