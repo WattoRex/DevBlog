@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import NavBar from '../general/NavBar';
 
 const ArticleComponent = () => {
     const [articleData, setArticleData] = useState(null);
@@ -30,28 +29,29 @@ const ArticleComponent = () => {
                 case 'paragraph':
                     return (
                         <p key={index}>
-                            {element.children.map((child, childIndex) => {
-                                let style = {};
-                                if (child.bold) style.fontWeight = 'bold';
-                                if (child.italic) style.fontStyle = 'italic';
-                                if (child.underline) style.textDecoration = 'underline';
-                                if (child.code) style.fontFamily = 'monospace';
-                                if (child.type === 'text') {
-                                    return (
-                                        <span key={childIndex} style={style}>
-                                            {child.text}
-                                        </span>
-                                    );
-                                } else if (child.type === 'link') {
-                                    return (
-                                        <a key={childIndex} href={child.url}>
-                                            {child.children.map((linkChild, linkChildIndex) => (
-                                                <span key={linkChildIndex}>{linkChild.text}</span>
-                                            ))}
-                                        </a>
-                                    );
-                                }
-                            })}
+                            { // eslint-disable-next-line 
+                                element.children.map((child, childIndex) => {
+                                    let style = {};
+                                    if (child.bold) style.fontWeight = 'bold';
+                                    if (child.italic) style.fontStyle = 'italic';
+                                    if (child.underline) style.textDecoration = 'underline';
+                                    if (child.code) style.fontFamily = 'monospace';
+                                    if (child.type === 'text') {
+                                        return (
+                                            <span key={childIndex} style={style}>
+                                                {child.text}
+                                            </span>
+                                        );
+                                    } else if (child.type === 'link') {
+                                        return (
+                                            <a key={childIndex} href={child.url}>
+                                                {child.children.map((linkChild, linkChildIndex) => (
+                                                    <span key={linkChildIndex}>{linkChild.text}</span>
+                                                ))}
+                                            </a>
+                                        );
+                                    }
+                                })}
                         </p>
                     );
                 case 'list':
@@ -81,8 +81,12 @@ const ArticleComponent = () => {
                             key={index}
                             src={imageUrl}
                             alt={element.image.alternativeText}
-                            style={{ maxWidth: '60%', height: 'auto' }}
+                            style={{
+                                maxWidth: '60%',
+                                height: 'auto',
+                            }}
                         />
+
                     );
                 case 'quote':
                     return <blockquote key={index}>{element.children[0].text}</blockquote>;
@@ -96,17 +100,18 @@ const ArticleComponent = () => {
     };
 
     return (
-        <div>
-            <NavBar />
-            {articleData ? (
-                <div>
-                    <h2>{articleData.data.attributes.Titre}</h2>
-                    <p>{articleData.data.attributes.Description}</p>
-                    {renderContent(articleData.data.attributes.Contenue)}
-                </div>
-            ) : (
-                <p>Chargement...</p>
-            )}
+        <div className="center-container">
+            <div className="center-content">
+                {articleData ? (
+                    <div className='articleContent'>
+                        <h2>{articleData.data.attributes.Titre}</h2>
+                        <p>{articleData.data.attributes.Description}</p>
+                        {renderContent(articleData.data.attributes.Contenue)}
+                    </div>
+                ) : (
+                    <p>Chargement...</p>
+                )}
+            </div>
         </div>
     );
 }

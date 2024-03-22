@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+
 
 const AllArticles = ({ searchTerm }) => {
     const [filteredArticles, setFilteredArticles] = useState([]);
@@ -60,6 +62,8 @@ const AllArticles = ({ searchTerm }) => {
     //     setSearchTerm(event.target.value);
     // };
 
+    console.log(filteredArticles)
+
     return (
         <div className='last-articlePage'>
 
@@ -82,7 +86,7 @@ const AllArticles = ({ searchTerm }) => {
                         )}
                         <p className='description'>{article.attributes.Description}</p>
                         <p className='tags'>{article.attributes.tags.data.map(tag => tag.attributes.TagName).join(', ')}</p>
-                        <a href={`/articles/${article.id}`} className="read-more">Lire l'article</a>
+                        <Link to={`/blog/${article.attributes.slug}`} className="read-more">Lire l'article</Link>
                     </div>
                     {windowWidth > 1024 && (
                         <img src={`${process.env.REACT_APP_STRAPI_API_URL}${article.attributes.ImageDePresentation.data.attributes.url}`} alt={article.title} />

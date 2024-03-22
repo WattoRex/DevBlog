@@ -1,0 +1,34 @@
+.center-container {
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.center-content {
+  /* text-align: center; */
+  max-width: 800px; /* Vous pouvez ajuster cette valeur en fonction de la largeur maximale souhaitée */
+  margin: 0 auto; /* Cela centre le contenu horizontalement */
+}
+
+.articleContent img {
+  display: block;
+  margin: auto;
+}
+
+/* CSS page OneArticme */
+.pageOneArticleContainer {
+  background: linear-gradient(
+    to bottom,
+    #ffffff69,
+    #92c9b144,
+    #92c9b144,
+    #92c9b144,
+    #92c9b144,
+    #92c9b144,
+    #92c9b144,
+    #ffffff69
+  );
+}

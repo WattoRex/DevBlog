@@ -251,6 +251,11 @@
     top: -32vh;
   }
 
+  .Playground22 {
+    top: -6vh;
+    right: 8vh;
+  }
+
   /* Css des bulles pour la page About */
 }
 
@@ -281,6 +286,11 @@
   /* Css des bulles pour la page Playground */
   .Playground2 {
     top: -32vh;
+    right: 8vh;
+  }
+
+  .Playground22 {
+    top: -12vh;
     right: 8vh;
   }
 

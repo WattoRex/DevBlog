@@ -12,7 +12,7 @@ const CodePreview = ({ projectId }) => {
             try {
                 const response = await axios.get(`${process.env.REACT_APP_STRAPI_API_URL}/api/creations/${projectId}?populate=*`);
                 setCodeCSS(response.data.data.attributes.CodeCSS);
-                setCodeJSX(response.data.data.attributes.CodeJSX);
+                setCodeJSX(response.data.data.attributes.CodeHTML);
             } catch (error) {
                 console.error('Error fetching CSS projects:', error);
             }

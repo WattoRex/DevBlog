@@ -27,11 +27,13 @@ ol {
 @import url("./pageArticles/pageArticle.css");
 @import url("./pageArticles/searchBar.css");
 @import url("./pageArticles/heroBannersArticle.css");
+@import url("./pageArticles/oneArticle.css");
 
 /* Css Playground Page */
 @import url("./pagePlayground/playgroundGrid.css");
 @import url("./pagePlayground/pagePlayground.css");
 @import url("./pagePlayground/filter.css");
+@import url("./pagePlayground/codeView.css");
 
 /* Css Projetc Page */
 

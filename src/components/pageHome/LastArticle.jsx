@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const LastArticle = () => {
     const [lastArticle, setLastArticle] = useState(null);
@@ -50,7 +51,7 @@ const LastArticle = () => {
                         <h5>{lastArticle.attributes.Titre}</h5>
                         <p className='description'>{lastArticle.attributes.Description}</p>
                         <p className='tags'>{lastArticle.attributes.tags.data.map(tag => tag.attributes.TagName).join(', ')}</p>
-                        <a href={`/articles/${lastArticle.id}`} className="read-more">Lire l'article</a>
+                        <Link to={`/blog/${lastArticle.attributes.slug}`} className="read-more">Lire l'article</Link>
                     </div>
                     <img src={`${process.env.REACT_APP_STRAPI_API_URL}${lastArticle.attributes.ImageDePresentation.data.attributes.url}`} alt={lastArticle.title} />
                 </div>
@@ -67,7 +68,7 @@ const LastArticle = () => {
                         <img src={`${process.env.REACT_APP_STRAPI_API_URL}${lastArticle.attributes.ImageDePresentation.data.attributes.url}`} alt={lastArticle.title} />
                         <p className='description'>{lastArticle.attributes.Description}</p>
                         <p className='tags'>{lastArticle.attributes.tags.data.map(tag => tag.attributes.TagName).join(', ')}</p>
-                        <a href={`/articles/${lastArticle.id}`} className="read-more">Lire l'article</a>
+                        <Link to={`/blog/${lastArticle.attributes.slug}`} className="read-more">Lire l'article</Link>
                     </div>
                 </div>
             </div>

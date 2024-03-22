@@ -32,7 +32,7 @@ const LastCssProjects = () => {
                         <CodePreview projectId={project.id} />
                         <div className='project-title'>{project.attributes.Titre}</div>
                         <p>{project.attributes.Description}</p>
-                        <Link to={`/code/${project.id}`} className="view-code-button">Voir le code</Link>
+                        <Link to={`/playground/${project.attributes.slug}`} className="view-code-button">Voir le code</Link>
                     </div>
                 ))}
             </div>

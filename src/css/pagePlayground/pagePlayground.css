@@ -38,3 +38,65 @@
     #92c9b144
   );
 }
+
+/* Page View */
+.pageCodeViewContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.CodeViewPageContainer {
+  background: linear-gradient(to bottom, #ffffff69, #92c9b144, #92c9b144);
+  padding-top: 1vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.ProposalPageContainer {
+  background: linear-gradient(to top, #ffffff69, #92c9b144, #92c9b144);
+  padding-top: 1vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.proposalText {
+  color: black;
+  text-align: center;
+}
+
+.proposalTextContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.back {
+  margin-top: 0vh;
+  margin: 0.5vh;
+}
+
+.PlaygroundGridContainerContainer {
+  width: 91vw;
+}
+
+/*  Mode bureau */
+@media screen and (min-width: 1025px) {
+  .PlaygroundGridContainerContainer {
+    width: 80%;
+  }
+}
+
+/*  Mode bureau version vertical */
+@media screen and (min-width: 1025px) and (orientation: portrait) {
+  .PlaygroundGridContainerContainer {
+    width: 90%;
+  }
+}
