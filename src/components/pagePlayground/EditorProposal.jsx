@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 import CodePreview from "../general/CodePreview"
 
-const EditorProposal = ({ creationCategory }) => {
+const EditorProposal = ({ creationCategory, IDProject }) => {
     const [cssProjects, setCssProjects] = useState([]);
     const [categoryWithoutHash, setCategoryWithoutHash] = useState('');
 
@@ -22,7 +22,7 @@ const EditorProposal = ({ creationCategory }) => {
 
                 console.log(categoryWithoutHash)
 
-                const response = await axios.get(`${process.env.REACT_APP_STRAPI_API_URL}/api/creations?populate=*&random=true&pagination&filters[tag][TagName][$contains]=${categoryWithoutHash}`);
+                const response = await axios.get(`${process.env.REACT_APP_STRAPI_API_URL}/api/creations?populate=*&random=true&pagination&filters[tag][TagName][$contains]=${categoryWithoutHash}&filters[id][$ne]=${IDProject}`);
                 setCssProjects(response.data);
             } catch (error) {
                 console.error('Error fetching proposal:', error);
@@ -31,7 +31,7 @@ const EditorProposal = ({ creationCategory }) => {
 
 
         fetchProposal();
-    }, [creationCategory, categoryWithoutHash]);
+    }, [creationCategory, categoryWithoutHash, IDProject]);
 
     if (!cssProjects || cssProjects.length === 0) {
         return <div>Loading...</div>;

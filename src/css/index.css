@@ -13,6 +13,7 @@ ol {
 @import url("./general/navBar.css");
 @import url("./general/footer.css");
 @import url("./general/pagination.css");
+@import url("./general/share.css");
 
 /* Css Home Page */
 @import url("./pageHome/pageHome.css");

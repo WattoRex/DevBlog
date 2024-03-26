@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import NavBar from '../components/general/NavBar';
 import Footer from '../components/general/Footer';
+import Share from '../components/general/share';
 
 import CodePreview from '../components/pagePlayground/Editor';
 import Proposal from '../components/pagePlayground/EditorProposal';
@@ -9,9 +10,12 @@ import Bubble from '../components/pagePlayground/BubblePlaygroundTwo'
 
 
 const CodeView = () => {
+    const articleUrl = window.location.href;
+    const articleTitle = 'Nouveau composant !';
 
     // Gestion de la catégorie de création entre composants CodePreview et Proposal
     const [creationCategory, setCreationCategory] = useState(null);
+    const [creationID, setCreationID] = useState(null);
 
     const updateCreationCategory = (category) => {
         setCreationCategory(category);
@@ -23,11 +27,12 @@ const CodeView = () => {
 
             <div className='pageCodeViewContainer'>
                 <div className='CodeViewPageContainer'>
-                    <CodePreview updateCreationCategory={updateCreationCategory} />
+                    <CodePreview updateCreationCategory={updateCreationCategory} IDProject={setCreationID} />
                 </div>
 
                 <div className='ProposalPageContainer'>
-                    <Proposal creationCategory={creationCategory} />
+                    <Proposal creationCategory={creationCategory} IDProject={creationID} />
+                    <Share url={articleUrl} title={articleTitle} description={'Vous pouvez partager ce composant en utilisant les boutons ci-dessous :'} />
                 </div>
 
                 {/* Animation */}

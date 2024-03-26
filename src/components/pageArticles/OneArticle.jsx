@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
+import CodeBlockWithPrism from "../general/CodeBlock";
+
+
 const ArticleComponent = () => {
     const [articleData, setArticleData] = useState(null);
 
@@ -21,6 +24,16 @@ const ArticleComponent = () => {
         fetchArticleData();
     }, []);
 
+    const detectLanguage = (code) => {
+        if (code.includes('import') || code.includes('export') || code.includes('function') || code.includes('=>') || code.includes('useState') || code.includes('useEffect') || code.includes('useRef') || code.includes('useContext')) {
+            return 'jsx';
+        } else if (code.includes(':') || code.includes('{') || code.includes('}') || code.includes(';')) {
+            return 'css';
+        } else {
+            return 'js';
+        }
+    };
+
     // Fonction pour rendre les éléments du contenu riche
     const renderContent = (content) => {
         // eslint-disable-next-line
@@ -28,14 +41,28 @@ const ArticleComponent = () => {
             switch (element.type) {
                 case 'paragraph':
                     return (
-                        <p key={index}>
+                        <div key={index} className='paragraph'>
                             { // eslint-disable-next-line 
                                 element.children.map((child, childIndex) => {
                                     let style = {};
                                     if (child.bold) style.fontWeight = 'bold';
                                     if (child.italic) style.fontStyle = 'italic';
                                     if (child.underline) style.textDecoration = 'underline';
-                                    if (child.code) style.fontFamily = 'monospace';
+
+                                    if (child.code) {
+                                        const detectedLanguage = detectLanguage(child.text);
+                                        return (
+                                            <div className='code22'>
+                                                <CodeBlockWithPrism
+                                                    key={childIndex}
+                                                    code={child.text}
+                                                    language={detectedLanguage}
+                                                    className="code-block"
+                                                />
+                                            </div>
+                                        );
+                                    }
+
                                     if (child.type === 'text') {
                                         return (
                                             <span key={childIndex} style={style}>
@@ -52,7 +79,7 @@ const ArticleComponent = () => {
                                         );
                                     }
                                 })}
-                        </p>
+                        </div>
                     );
                 case 'list':
                     if (element.format === 'unordered') {
@@ -82,7 +109,7 @@ const ArticleComponent = () => {
                             src={imageUrl}
                             alt={element.image.alternativeText}
                             style={{
-                                maxWidth: '60%',
+                                // maxWidth: '60%',
                                 height: 'auto',
                             }}
                         />
@@ -117,3 +144,4 @@ const ArticleComponent = () => {
 }
 
 export default ArticleComponent;
+

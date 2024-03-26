@@ -1,23 +1,3 @@
-.center-container {
-  padding-top: 1vh;
-  padding-bottom: 1vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-}
-
-.center-content {
-  /* text-align: center; */
-  max-width: 800px; /* Vous pouvez ajuster cette valeur en fonction de la largeur maximale souhaitée */
-  margin: 0 auto; /* Cela centre le contenu horizontalement */
-}
-
-.articleContent img {
-  display: block;
-  margin: auto;
-}
-
 /* CSS page OneArticme */
 .pageOneArticleContainer {
   background: linear-gradient(
@@ -31,4 +11,108 @@
     #92c9b144,
     #ffffff69
   );
+}
+
+/* CSS container du contenue */
+.center-container {
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* width: 100%; */
+}
+
+.center-content {
+  width: 91vw;
+  margin: 0 auto;
+}
+
+/* CSS contenue */
+.articleContent {
+  background-color: #bfcec744;
+  border-radius: 6px;
+  padding: 0.8vh;
+}
+
+.articleContent img {
+  display: block;
+  margin: auto;
+  max-width: 95%;
+}
+
+.articleContent button {
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #272822;
+}
+
+.articleContent .paragraph,
+.articleContent p {
+  text-align: justify;
+  margin: 1.2vh;
+}
+
+.articleContent blockquote {
+  background-color: rgba(128, 128, 128, 0.25);
+  margin: 0.6vh 2.2vh 0.6vh 2.2vh;
+  padding: 0.6vh;
+  border-radius: 6px;
+}
+
+.articleContent h1,
+.articleContent h2,
+.articleContent h3,
+.articleContent h4,
+.articleContent h5,
+.articleContent h6 {
+  margin-top: 0.6vh;
+  border-left: 4px solid #92c9b1b2;
+}
+
+.articleContent ul {
+  margin-left: 1.8vh;
+}
+
+.articleContent a {
+  text-decoration: none;
+  color: #3ca578;
+}
+
+.articleContent a:hover {
+  color: #105537;
+}
+
+/*  Mode bureau */
+@media screen and (min-width: 1025px) {
+  .center-content {
+    width: 50%;
+  }
+
+  .articleContent .paragraph,
+  .articleContent p {
+    text-align: justify;
+    margin: 0.8vh;
+  }
+
+  .articleContent ul {
+    margin-left: 1.2vh;
+  }
+
+  .articleContent img {
+    max-width: 60%;
+  }
+}
+
+/*  Mode bureau version vertical */
+@media screen and (min-width: 1025px) and (orientation: portrait) {
+  .center-content {
+    width: 91vw;
+  }
+
+  .articleContent img {
+    max-width: 80%;
+  }
 }
