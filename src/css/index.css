@@ -37,6 +37,8 @@ ol {
 @import url("./pagePlayground/codeView.css");
 
 /* Css Projetc Page */
+@import url("./pageProjetcs/pageProjets.css");
+@import url("./pageProjetcs/projetcsGrid.css");
 
 /* Css About Page */
 @import url("./pageAbout/pageAbout.css");

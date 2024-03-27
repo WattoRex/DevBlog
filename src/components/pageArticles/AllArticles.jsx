@@ -40,7 +40,7 @@ const AllArticles = ({ searchTerm }) => {
             let apiUrl = `${process.env.REACT_APP_STRAPI_API_URL}/api/articles?populate=*`;
 
             if (searchTerm) {
-                apiUrl += `&filters[Titre][$containsi]=${searchTerm}` && `&filters[Description][$containsi]=${searchTerm}` && `&filters[tags][TagName][$containsi]=${searchTerm}`;
+                apiUrl += `&filters[Titre][$containsi]=${searchTerm}`;
             }
 
             const response = await axios.get(apiUrl);
@@ -68,12 +68,11 @@ const AllArticles = ({ searchTerm }) => {
         <div className='last-articlePage'>
 
             <h3>Derniers articles</h3>
-            {/* <SearchBar searchTerm={searchTerm} onSearch={handleSearch} holderText="Rechercher un article..." /> */}
 
             {loading && <p>Chargement en cours...</p>} {/* Indicateur de chargement */}
 
             {filteredArticles.length === 0 && !loading && ( // Afficher seulement si pas de chargement et aucun article trouvé
-                <p>Aucun article ne correspond à votre recherche.</p>
+                <p className="no-results-message blog">Aucun article ne correspond à votre recherche.</p>
             )}
 
             {filteredArticles.map((article) => (

@@ -22,6 +22,7 @@ const Playground = ({ selectedCategory, searchTerm }) => {
         setCurrentPage(page);
     };
 
+
     // Fetch CSS projects
     // Définition d'une fonction fetchData en utilisant useCallback.
     // useCallback est utilisé pour éviter que la fonction ne soit recréée à chaque rendu, 
@@ -36,9 +37,10 @@ const Playground = ({ selectedCategory, searchTerm }) => {
             }
 
             if (searchTerm) {
-                apiURL += `&filters[Titre][$containsi]=${searchTerm}` && `&filters[Description][$containsi]=${searchTerm}`;
+                apiURL += `&filters[Titre][$containsi]=${searchTerm}`;
             }
 
+            console.log(apiURL)
 
             // Effectue une requête GET asynchrone en utilisant Axios pour récupérer des données à partir d'une URL.
             const response = await axios.get(apiURL);
@@ -65,14 +67,20 @@ const Playground = ({ selectedCategory, searchTerm }) => {
         <div className='PlaygroundGridContainer'>
             <PageSizeSelector selectedPageSize={selectedPageSize} onPageSizeChange={handlePageSizeChange} />
             <div className="last-css-projects three-col">
-                {cssProjects.data.map(project => (
-                    <div key={project.id} className="project-card">
-                        <CodePreview projectId={project.id} />
-                        <div className='project-title'>{project.attributes.Titre}</div>
-                        <p>{project.attributes.Description}</p>
-                        <Link to={`/playground/${project.attributes.slug}`} className="view-code-button">Voir le code</Link>
-                    </div>
-                ))}
+                {cssProjects.data.length === 0 ? (
+                    <p className="no-results-message">Aucun composant ne correspond à vos critères de recherche.</p>
+                ) :
+                    cssProjects.data.map(project => (
+                        <div key={project.id} className="project-card">
+                            <CodePreview projectId={project.id} />
+                            <div className='project-title'>{project.attributes.Titre}</div>
+                            <p>{project.attributes.Description}</p>
+                            <Link to={`/playground/${project.attributes.slug}`} className="view-code-button">Voir le code</Link>
+                        </div>
+                    ))
+                }
+
+
             </div>
             <Pagination currentPage={currentPage} totalPages={Math.ceil(cssProjects.meta.pagination.total / selectedPageSize)} onPageChange={handlePageChange} />
         </div>
