@@ -1,7 +1,7 @@
 // eslint-disable-next-line
 import React, { useEffect } from 'react';
 
-const SEO = ({ title, description, keywords, canonicalUrl }) => {
+const SEO = ({ title, description, keywords, canonicalUrl, author }) => {
   useEffect(() => {
     // Met à jour le titre de la page
     document.title = title || "Titre par défaut";
@@ -44,7 +44,19 @@ const SEO = ({ title, description, keywords, canonicalUrl }) => {
       newLinkCanonical.href = canonicalUrl || window.location.href;
       document.head.appendChild(newLinkCanonical);
     }
-  }, [title, description, keywords, canonicalUrl]);
+
+    // Met à jour la balise méta de l'auteur
+    const metaAuthor = document.querySelector('meta[name="author"]');
+    if (metaAuthor) {
+      metaAuthor.content = author || "";
+    } else {
+      const newMetaAuthor = document.createElement('meta');
+      newMetaAuthor.name = 'author';
+      newMetaAuthor.content = author || "";
+      document.head.appendChild(newMetaAuthor);
+    }
+
+  }, [title, description, keywords, canonicalUrl, author]);
 
   return null; // Ce composant ne rend rien dans l'interface
 };

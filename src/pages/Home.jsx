@@ -10,9 +10,20 @@ import LastProjects from '../components/pageHome/LastProjetcs';
 import LastCssProjects from '../components/pageHome/LastCssProjets';
 import Bubble from "../components/pageHome/Bubble"
 
+import SEO from "../context/seo";
+
+
 const Home = () => {
     return (
         <div className='pageHome'>
+            <SEO
+                title="Manier Valentin - Développeur Web"
+                description="Découvrez mes compétences et projets en tant que développeur web. Contactez-moi pour toute collaboration ou opportunité."
+                keywords="développeur web, compétences, projets, contact, article, React, JavaScript, CSS, HTML, SEO, composant, Manier, Valentin"
+                canonicalUrl="https://www.votresite.com/"
+            />
+
+
             <NavBar />
             <div className='pageHomeContainer'>
 

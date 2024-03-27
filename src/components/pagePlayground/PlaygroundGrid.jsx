@@ -40,8 +40,6 @@ const Playground = ({ selectedCategory, searchTerm }) => {
                 apiURL += `&filters[Titre][$containsi]=${searchTerm}`;
             }
 
-            console.log(apiURL)
-
             // Effectue une requête GET asynchrone en utilisant Axios pour récupérer des données à partir d'une URL.
             const response = await axios.get(apiURL);
             // Met à jour l'état des projets CSS avec les données récupérées de la réponse.

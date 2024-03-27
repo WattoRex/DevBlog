@@ -7,6 +7,8 @@ import PlaygroundGrid from '../components/pagePlayground/PlaygroundGrid';
 import Filter from '../components/pagePlayground/Filter';
 import Bubble from '../components/pagePlayground/BubblePlayground'
 
+import SEO from "../context/seo";
+
 
 const Playground = () => {
     const [searchTerm, setSearchTerm] = useState('');
@@ -25,6 +27,13 @@ const Playground = () => {
 
     return (
         <div className='pagePlayground'>
+            <SEO
+                title="Manier Valentin - Mon Playground"
+                description="Explorez et testez des composants React dans mon Playground. Utilisez le filtre pour trouver des composants spécifiques."
+                keywords="React, composants, Playground, exploration, card, form, loader, button, tooltip, toggle switch, checkbox, animation, Manier, Valentin"
+                canonicalUrl="https://www.votresite.com/playground"
+            />
+
             <NavBar />
             <div className='pagePlaygroundContainer'>
 

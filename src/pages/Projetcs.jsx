@@ -8,6 +8,8 @@ import SearchBar from '../components/pageArticles/SearchBar';
 
 import Bubble from "../components/pageHome/Bubble"
 
+import SEO from "../context/seo";
+
 
 const Projetcs = () => {
     const [searchTerm, setSearchTerm] = useState('');
@@ -19,6 +21,14 @@ const Projetcs = () => {
 
     return (
         <div className='pageProjetcs'>
+
+            <SEO
+                title="Manier Valentin - Mes Portfolios"
+                description="Explorez mes réalisations et projets en tant que développeur web. Utilisez la barre de recherche pour trouver des projets spécifiques."
+                keywords="projets, réalisations, développeur web, recherche de projets, React, JavaScript, CSS, HTML, SEO, composant, Manier, Valentin"
+                canonicalUrl="https://www.votresite.com/projets"
+            />
+
             <NavBar />
 
             <div className='pageProjetcsContainer'>

@@ -7,7 +7,7 @@ import { useParams } from 'react-router-dom';
 // import "prismjs/themes/prism-okaidia.css";
 import CodeBlockWithPrism from "../general/CodeBlock";
 
-const Editor = ({ updateCreationCategory, IDProject }) => {
+const Editor = ({ updateCreationCategory, IDProject, TitreSEO, DescriptionSEO, KeywordsSEO }) => {
 
     // const [creation, setCreation] = useState(null);
     // eslint-disable-next-line
@@ -26,10 +26,12 @@ const Editor = ({ updateCreationCategory, IDProject }) => {
                     `${process.env.REACT_APP_STRAPI_API_URL}/api/creations?populate=*&filters[slug]=${slug}`
                 );
                 const CreationData = response.data.data[0];
-                // setCreation(CreationData);
                 setJSXCode(CreationData.attributes.CodeJSX);
                 setHTMLcode(CreationData.attributes.CodeHTML);
                 setCSSCode(CreationData.attributes.CodeCSS);
+                TitreSEO(CreationData.attributes.SEO.title);
+                DescriptionSEO(CreationData.attributes.SEO.description);
+                KeywordsSEO(CreationData.attributes.SEO.keywords);
 
                 // Envoier la valeur de la catégorie de création au composant parent
                 updateCreationCategory(CreationData.attributes.tag.data.attributes.TagName);
@@ -40,6 +42,7 @@ const Editor = ({ updateCreationCategory, IDProject }) => {
         };
 
         fetchCreationDetails();
+        // eslint-disable-next-line
     }, [slug, updateCreationCategory, IDProject]);
 
     const [jsxTabActive, setJsxTabActive] = useState(true);

@@ -62,7 +62,6 @@ const AllArticles = ({ searchTerm }) => {
     //     setSearchTerm(event.target.value);
     // };
 
-    console.log(filteredArticles)
 
     return (
         <div className='last-articlePage'>

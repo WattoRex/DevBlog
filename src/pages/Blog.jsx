@@ -5,6 +5,9 @@ import AllArticle from '../components/pageArticles/AllArticles';
 import HeroBanner from '../components/pageArticles/HeroBannerArticle';
 import Bubble from '../components/pagePlayground/BubblePlayground';
 
+import SEO from "../context/seo";
+
+
 const Blog = () => {
     const [searchTerm, setSearchTerm] = useState('');
 
@@ -14,6 +17,14 @@ const Blog = () => {
     };
     return (
         <div className='pageBlog'>
+
+            <SEO
+                title="Manier Valentin - Mes articles"
+                description="Découvrez des articles, tutoriels et astuces sur le développement web dans mon blog. Utilisez la barre de recherche pour trouver des articles spécifiques."
+                keywords="blog, articles, tutoriels, développement web, astuces"
+                canonicalUrl="https://www.votresite.com/blog"
+            />
+
             <NavBar />
             <div className='pageBlogContainer' style={{ overflow: 'hidden' }}>
 

@@ -7,6 +7,7 @@ import CodePreview from '../components/pagePlayground/Editor';
 import Proposal from '../components/pagePlayground/EditorProposal';
 
 import Bubble from '../components/pagePlayground/BubblePlaygroundTwo'
+import SEO from "../context/seo";
 
 
 const CodeView = () => {
@@ -16,6 +17,10 @@ const CodeView = () => {
     // Gestion de la catégorie de création entre composants CodePreview et Proposal
     const [creationCategory, setCreationCategory] = useState(null);
     const [creationID, setCreationID] = useState(null);
+    const [TitreSEO, setTitreSEO] = useState(null);
+    const [DescriptionSEO, setDescriptionSEO] = useState(null);
+    const [KeywordsSEO, setKeywordsSEO] = useState(null);
+
 
     const updateCreationCategory = (category) => {
         setCreationCategory(category);
@@ -23,11 +28,20 @@ const CodeView = () => {
 
     return (
         <div className='pageCodeView'>
+
+            <SEO
+                title={TitreSEO}
+                description={DescriptionSEO}
+                keywords={KeywordsSEO}
+                canonicalUrl={articleUrl}
+                author="Manier Valentin"
+            />
+
             <NavBar />
 
             <div className='pageCodeViewContainer'>
                 <div className='CodeViewPageContainer'>
-                    <CodePreview updateCreationCategory={updateCreationCategory} IDProject={setCreationID} />
+                    <CodePreview updateCreationCategory={updateCreationCategory} IDProject={setCreationID} TitreSEO={setTitreSEO} DescriptionSEO={setDescriptionSEO} KeywordsSEO={setKeywordsSEO} />
                 </div>
 
                 <div className='ProposalPageContainer'>

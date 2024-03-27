@@ -12,15 +12,11 @@ const EditorProposal = ({ creationCategory, IDProject }) => {
     useEffect(() => {
         async function fetchProposal() {
             try {
-                console.log("test")
-
                 // Supprimer le '#' si c'est le premier caractère de creationCategory 
                 // eslint-disable-next-line
                 const removeHash = creationCategory.startsWith('#')
                     ? setCategoryWithoutHash(creationCategory.substring(1))
                     : creationCategory;
-
-                console.log(categoryWithoutHash)
 
                 const response = await axios.get(`${process.env.REACT_APP_STRAPI_API_URL}/api/creations?populate=*&random=true&pagination&filters[tag][TagName][$contains]=${categoryWithoutHash}&filters[id][$ne]=${IDProject}`);
                 setCssProjects(response.data);
@@ -29,8 +25,13 @@ const EditorProposal = ({ creationCategory, IDProject }) => {
             }
         }
 
+        // Ajout d'un délai de 1 seconde avant d'exécuter fetchProposal
+        const timeoutId = setTimeout(() => {
+            fetchProposal();
+        }, 100);  // Délai de 1 seconde
 
-        fetchProposal();
+        // Nettoyage du timeout si le composant est démonté ou si une nouvelle mise à jour déclenche un autre effet
+        return () => clearTimeout(timeoutId);
     }, [creationCategory, categoryWithoutHash, IDProject]);
 
     if (!cssProjects || cssProjects.length === 0) {

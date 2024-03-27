@@ -10,9 +10,20 @@ import Contact from '../components/pageAbout/ContactForm';
 
 import Bubble from '../components/pageHome/Bubble';
 
+import SEO from "../context/seo";
+
+
 const AboutMe = () => {
     return (
         <div className='pageAbout'>
+
+            <SEO
+                title="Manier Valentin - À propos de moi"
+                description="Découvrez qui je suis, mes différentes compétences en développement front-end et en développement back-end, et comment me contacter."
+                keywords="à propos, développeur web, front-end, back-end, contact, React, JavaScript, CSS, HTML, SEO, composant, Manier, Valentin"
+                canonicalUrl="https://www.votresite.com/about"
+            />
+
             <NavBar />
 
             <div className='pageAboutContainer'>

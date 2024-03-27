@@ -1,28 +1,34 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { useParams } from 'react-router-dom';
+
 
 import CodeBlockWithPrism from "../general/CodeBlock";
 
 
-const ArticleComponent = () => {
+const ArticleComponent = ({ SEOData }) => {
     const [articleData, setArticleData] = useState(null);
 
+    const { slug } = useParams();
+
+
     useEffect(() => {
-        // Fonction pour récupérer les données de l'article depuis l'API Strapi
+        // Function to fetch article data from Strapi API using axios
         const fetchArticleData = async () => {
             try {
-                const response = await fetch(`${process.env.REACT_APP_STRAPI_API_URL}/api/articles/1`);
-                if (!response.ok) {
-                    throw new Error('Erreur lors de la récupération des données');
-                }
-                const data = await response.json();
-                setArticleData(data);
+                const response = await axios.get(`${process.env.REACT_APP_STRAPI_API_URL}/api/articles?populate=*&filters[slug]=${slug}`);
+                SEOData(response.data.data[0].attributes.SEO);
+                setArticleData(response.data.data[0]);
+
             } catch (error) {
-                console.error('Erreur:', error);
+                console.error('Error:', error);
             }
         };
 
         fetchArticleData();
-    }, []);
+        // eslint-disable-next-line
+    }, [slug]);
+
 
     const detectLanguage = (code) => {
         if (code.includes('import') || code.includes('export') || code.includes('function') || code.includes('=>') || code.includes('useState') || code.includes('useEffect') || code.includes('useRef') || code.includes('useContext')) {
@@ -52,9 +58,8 @@ const ArticleComponent = () => {
                                     if (child.code) {
                                         const detectedLanguage = detectLanguage(child.text);
                                         return (
-                                            <div className='code22'>
+                                            <div key={`code-${index}-${childIndex}`} className='code22'>
                                                 <CodeBlockWithPrism
-                                                    key={childIndex}
                                                     code={child.text}
                                                     language={detectedLanguage}
                                                     className="code-block"
@@ -131,9 +136,9 @@ const ArticleComponent = () => {
             <div className="center-content">
                 {articleData ? (
                     <div className='articleContent'>
-                        <h2>{articleData.data.attributes.Titre}</h2>
-                        <p>{articleData.data.attributes.Description}</p>
-                        {renderContent(articleData.data.attributes.Contenue)}
+                        <h2>{articleData.attributes.Titre}</h2>
+                        <p>{articleData.attributes.Description}</p>
+                        {renderContent(articleData.attributes.Contenue)}
                     </div>
                 ) : (
                     <p>Chargement...</p>
