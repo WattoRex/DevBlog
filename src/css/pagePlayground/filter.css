@@ -12,8 +12,10 @@
   padding: 0;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
   gap: 0.4vh;
+  padding: 1.2vh;
 }
 
 .filter-menu .bouton {
@@ -44,4 +46,10 @@
 
 .bouton.active:hover {
   background-color: black;
+}
+
+@media screen and (min-width: 1024px) {
+  .filter-menu {
+    padding: 0vh;
+  }
 }

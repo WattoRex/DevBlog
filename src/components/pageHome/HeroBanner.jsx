@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 
 const HeroBanner = () => {
     return (
@@ -9,8 +11,8 @@ const HeroBanner = () => {
                 <p className='heroText2'>Je suis un Développeur Web Junior basé dans la région de Lens, j'aime concevoir de beau et performant site web.  </p>
 
                 <div className='heroButton'>
-                    <div className='heroButtonPortfolio'>Mon Portfolio</div>
-                    <div className='heroButtonAbout'>Me decouvrir</div>
+                    <Link to="/projects" className='heroButtonPortfolio' style={{ textDecoration: "none" }}>Mon Portfolio</Link>
+                    <Link to="/about" className='heroButtonAbout' style={{ textDecoration: "none" }}>Me decouvrir</Link>
                 </div>
 
             </div>

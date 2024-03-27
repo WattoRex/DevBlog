@@ -29,6 +29,21 @@ const Filter = ({ onCategoryChange, searchTerm, onSearch }) => {
                 <li>
                     <div className={`bouton ${activeFilter === "Button" ? 'active' : ''}`} onClick={() => handleCategoryClick("Button")}>Button</div>
                 </li>
+                <li>
+                    <div className={`bouton ${activeFilter === "Checkbox" ? 'active' : ''}`} onClick={() => handleCategoryClick("Checkbox")}>Checkbox</div>
+                </li>
+                <li>
+                    <div className={`bouton ${activeFilter === "Loader" ? 'active' : ''}`} onClick={() => handleCategoryClick("Loader")}>Loader</div>
+                </li>
+                <li>
+                    <div className={`bouton ${activeFilter === "Toggle-switch" ? 'active' : ''}`} onClick={() => handleCategoryClick("Toggle-switch")}> Toggle-switch</div>
+                </li>
+                <li>
+                    <div className={`bouton ${activeFilter === "Animation" ? 'active' : ''}`} onClick={() => handleCategoryClick("Animation")}>Animation</div>
+                </li>
+                <li>
+                    <div className={`bouton ${activeFilter === "Tooltip" ? 'active' : ''}`} onClick={() => handleCategoryClick("Tooltip")}>Tooltip</div>
+                </li>
                 {/* Ajoutez d'autres éléments de filtre ici */}
             </ul>
             <SearchBar searchTerm={searchTerm} onSearch={onSearch} holderText="Rechercher un composant..." taille={"60vw"} />

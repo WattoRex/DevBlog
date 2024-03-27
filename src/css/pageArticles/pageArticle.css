@@ -7,3 +7,10 @@
   /* height: 90vh; */
   background: linear-gradient(to top, #ffffff69, #92c9b144);
 }
+
+.pageOneArticleContainer {
+  user-select: none; /* Empêche la sélection de texte */
+  -webkit-user-select: none; /* Pour les navigateurs basés sur Webkit (comme Chrome et Safari) */
+  -moz-user-select: none; /* Pour Firefox */
+  -ms-user-select: none; /* Pour Internet Explorer/Edge */
+}

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import axios from 'axios';
 
 const MeContacter = () => {
     const [nom, setNom] = useState('');
@@ -7,15 +7,67 @@ const MeContacter = () => {
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
 
+    const nomPrenomRegex = /^[A-Za-z]+$/;
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+    const sendDataToStrapi = async () => {
+        try {
+            const response = await axios.post(`${process.env.REACT_APP_STRAPI_API_URL}/api/contacts`, {
+                data: {
+                    Nom: nom,
+                    Prenom: prenom,
+                    Email: email.trim(),
+                    Message: message
+                }
+            });
+            console.log(response.data);
+            resetForm(); // Réinitialiser le formulaire
+        } catch (error) {
+            console.error('Erreur lors de l\'envoi des données à Strapi:', error);
+        }
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Faire quelque chose avec les données saisies, comme les envoyer à un backend
-        console.log({
-            nom,
-            prenom,
-            email,
-            message
-        });
+        if (nomPrenomRegex.test(nom) && nomPrenomRegex.test(prenom) && emailRegex.test(email)) {
+            sendDataToStrapi();
+        } else {
+            alert('Veuillez vérifier les champs du formulaire.');
+        }
+    };
+
+    const handleChangeNom = (e) => {
+        const value = e.target.value;
+        if (nomPrenomRegex.test(value)) {
+            setNom(value);
+        }
+    };
+
+    const handleChangePrenom = (e) => {
+        const value = e.target.value;
+        if (nomPrenomRegex.test(value)) {
+            setPrenom(value);
+        }
+    };
+
+    const handleKeyPress = (e) => {
+        const regex = /^[a-zA-Z0-9\s]*$/;
+        if (!regex.test(e.key)) {
+            e.preventDefault();
+        }
+    };
+
+    const handleChangeEmail = (e) => {
+        const value = e.target.value.replace(/\s/g, ''); // Supprime tous les espaces
+        setEmail(value);
+    };
+
+
+    const resetForm = () => {
+        setNom('');
+        setPrenom('');
+        setEmail('');
+        setMessage('');
     };
 
     return (
@@ -29,7 +81,7 @@ const MeContacter = () => {
                             type="text"
                             id="nom"
                             value={nom}
-                            onChange={(e) => setNom(e.target.value)}
+                            onChange={handleChangeNom}
                             required
                         />
                     </div>
@@ -39,11 +91,10 @@ const MeContacter = () => {
                             type="text"
                             id="prenom"
                             value={prenom}
-                            onChange={(e) => setPrenom(e.target.value)}
+                            onChange={handleChangePrenom}
                             required
                         />
                     </div>
-
                 </div>
                 <div className="form-group">
                     <label htmlFor="email">Email:</label>
@@ -51,9 +102,11 @@ const MeContacter = () => {
                         type="email"
                         id="email"
                         value={email}
-                        onChange={(e) => setEmail(e.target.value)}
+                        onChange={handleChangeEmail}
                         required
+                        maxLength={62}
                     />
+
                 </div>
                 <div className="form-group">
                     <label htmlFor="message">Message:</label>
@@ -61,10 +114,13 @@ const MeContacter = () => {
                         id="message"
                         value={message}
                         onChange={(e) => setMessage(e.target.value)}
+                        onKeyPress={handleKeyPress}
                         required
+                        pattern="[a-zA-Z0-9\s]*"
+                        maxLength={600}
                     ></textarea>
                 </div>
-                <div className='form-submit' type="submit">Envoyer</div>
+                <div onClick={handleSubmit} className='form-submit'>Envoyer</div>
             </form>
         </div>
     );

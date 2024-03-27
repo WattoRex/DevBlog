@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const HeroBanner = () => {
     return (
@@ -17,9 +18,9 @@ const HeroBanner = () => {
                     </div>
 
                     <div className='heroButton About'>
-                        <div className='heroButtonAbout'>Obtenir mon CV</div>
-                        <div className='heroButtonPortfolio'>Mes Projets</div>
-                        <div className='heroButtonPortfolio'>Mes Créations</div>
+                        <Link className='heroButtonAbout' style={{ textDecoration: "none" }}>Obtenir mon CV</Link >
+                        <Link to={'/projects'} className='heroButtonPortfolio' style={{ textDecoration: "none" }}>Mes Projets</Link >
+                        <Link to={'/playground'} className='heroButtonPortfolio' style={{ textDecoration: "none" }}>Mes Créations</Link >
                     </div>
                 </div>
 

@@ -35,7 +35,8 @@
 
 /* Text */
 .heroTextArticle {
-  font-size: 2rem;
+  font-size: 1.2rem;
+  margin-bottom: 2.6vh;
   color: white;
   font-weight: bold;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -54,6 +55,11 @@
 
   .heroContentContainersArticle {
     gap: 4vh;
+  }
+
+  .heroTextArticle {
+    font-size: 2rem;
+    margin-bottom: 0vh;
   }
 }
 

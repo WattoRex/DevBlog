@@ -25,10 +25,10 @@ const EditorProposal = ({ creationCategory, IDProject }) => {
             }
         }
 
-        // Ajout d'un délai de 1 seconde avant d'exécuter fetchProposal
+        // Ajout d'un délai  avant d'exécuter fetchProposal
         const timeoutId = setTimeout(() => {
             fetchProposal();
-        }, 100);  // Délai de 1 seconde
+        }, 100);
 
         // Nettoyage du timeout si le composant est démonté ou si une nouvelle mise à jour déclenche un autre effet
         return () => clearTimeout(timeoutId);
