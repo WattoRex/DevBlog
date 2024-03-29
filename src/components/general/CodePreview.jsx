@@ -21,10 +21,21 @@ const CodePreview = ({ projectId }) => {
         fetchCodes();
     }, [projectId]);
 
+    // Générer une classe CSS unique pour ce composant basée sur le projectId
+    const uniqueClass = `codePreview-${projectId}`;
+
     return (
-        <div className='codePreview'>
-            <style>{codeCSS}</style>
-            <div dangerouslySetInnerHTML={{ __html: codeJSX }} />
+        <div className={`codePreview ${uniqueClass}`}>
+            <div className='codePreviewContent'>
+                <div className={uniqueClass} dangerouslySetInnerHTML={{ __html: codeJSX }} />
+            </div>
+            <style>
+                {`
+                    .codePreview.${uniqueClass} .${uniqueClass} {
+                        ${codeCSS}
+                    }
+                `}
+            </style>
         </div>
     );
 };
