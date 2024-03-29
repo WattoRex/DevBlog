@@ -27,7 +27,7 @@ const CodeView = () => {
     };
 
     return (
-        <div className='pageCodeView'>
+        <div className='pageCodeView' data-react-snap="true">
 
             <SEO
                 title={TitreSEO}
