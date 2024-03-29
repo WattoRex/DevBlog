@@ -6,6 +6,7 @@ import Article from '../components/pageArticles/OneArticle';
 import Share from '../components/general/share';
 
 import SEO from "../context/seo";
+import { Link } from 'react-router-dom';
 
 
 const OneArticle = () => {
@@ -26,6 +27,9 @@ const OneArticle = () => {
             />
 
             <NavBar />
+
+            <Link to={`/blog/`} className="view-code-button back">Retour aux articles</Link>
+
             <div className='pageOneArticleContainer'>
                 <Article SEOData={setSEOData} />
                 <Share url={articleUrl} title={articleTitle} description={'Vous pouvez partager cet article en utilisant les boutons ci-dessous :'} />

@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
+// Import de GA
+import {
+    GoogleReCaptchaProvider,
+    useGoogleReCaptcha,
+} from "react-google-recaptcha-v3";
+
 const MeContacter = () => {
     const [nom, setNom] = useState('');
     const [prenom, setPrenom] = useState('');
@@ -10,8 +16,19 @@ const MeContacter = () => {
     const nomPrenomRegex = /^[A-Za-z]+$/;
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
+    const { executeRecaptcha } = useGoogleReCaptcha(); // Déplacer le hook ici
+
     const sendDataToStrapi = async () => {
         try {
+
+            const captchaToken = await executeRecaptcha("envoie_formulaire");
+
+            if (!captchaToken) {
+                console.error("Veuillez valider le captcha.");
+                return;
+            }
+
+
             const response = await axios.post(`${process.env.REACT_APP_STRAPI_API_URL}/api/contacts`, {
                 data: {
                     Nom: nom,
@@ -126,4 +143,12 @@ const MeContacter = () => {
     );
 };
 
-export default MeContacter;
+const LoginFormWithRecaptcha = () => (
+    <GoogleReCaptchaProvider reCaptchaKey={process.env.REACT_APP_SITE_KEY}>
+        <MeContacter />
+    </GoogleReCaptchaProvider>
+);
+
+export default LoginFormWithRecaptcha;
+
+// export default MeContacter;

@@ -8,7 +8,7 @@ const HeroBanner = () => {
             <div className='heroContentContainers about'>
 
                 <div className='imageContainer'>
-                    <img src={require('../../assets/Images/PageAbout/maniervalentin_webdeveloper-removebg-preview.png')} alt="heroImg" className='heroImg' />
+                    <img src={require('../../assets/Images/PageAbout/maniervalentin_webdeveloper-removebg-preview.webp')} alt="heroImg" className='heroImg' />
                 </div>
 
                 <div className='heroBannerCOntenue'>

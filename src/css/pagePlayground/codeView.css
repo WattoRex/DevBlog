@@ -151,6 +151,13 @@ pre[class*="language-"] {
   margin: 0;
 }
 
+pre[class*="language-"],
+code[class*="language-"] {
+  white-space: pre-wrap;
+  overflow: auto;
+  word-break: break-word;
+}
+
 /* CSS toggle dark/light */
 .containerToggle {
   --color: #a5a5b0;

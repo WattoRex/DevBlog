@@ -88,8 +88,8 @@
   }
 
   .imageContainer {
-    width: 380px;
-    height: 380px;
+    width: 18vh;
+    height: 18vh;
     position: relative;
     right: 3.2vh;
     align-self: center;

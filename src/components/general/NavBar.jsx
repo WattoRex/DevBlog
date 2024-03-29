@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Logo from '../../assets/Images/autres/Logo1.png';
+import Logo from '../../assets/Images/autres/Logo1.webp';
 
 const NavBar = () => {
     const [isMobileNavActive, setIsMobileNavActive] = useState(false);
