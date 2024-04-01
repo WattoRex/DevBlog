@@ -2,6 +2,15 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const HeroBanner = () => {
+
+    const downloadCV = () => {
+        const pdfPath = require('../../assets/CV/Manier_Valentin-CV.pdf');
+        const link = document.createElement('a');
+        link.href = pdfPath;
+        link.download = 'CV_ManierValentin.pdf';
+        link.click();
+    };
+
     return (
         <div className='imageBackground aboutB'>
 
@@ -18,7 +27,7 @@ const HeroBanner = () => {
                     </div>
 
                     <div className='heroButton About'>
-                        <Link className='heroButtonAbout' style={{ textDecoration: "none" }}>Obtenir mon CV</Link >
+                        <Link href="#" className='heroButtonAbout' style={{ textDecoration: "none" }} onClick={downloadCV}>Obtenir mon CV</Link>
                         <Link to={'/projects'} className='heroButtonPortfolio' style={{ textDecoration: "none" }}>Mes Projets</Link >
                         <Link to={'/playground'} className='heroButtonPortfolio' style={{ textDecoration: "none" }}>Mes Créations</Link >
                     </div>

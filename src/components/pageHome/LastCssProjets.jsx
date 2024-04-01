@@ -25,7 +25,7 @@ const LastCssProjects = () => {
 
     return (
         <div className='last-css-projects-container'>
-            <h4>Latest CSS Projects</h4>
+            <h4>Dernier projets CSS :</h4>
             <div className="last-css-projects">
                 {cssProjects.data.map(project => (
                     <div key={project.id} className="project-card">

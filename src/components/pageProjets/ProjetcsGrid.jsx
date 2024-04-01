@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const ProjectCard = ({ searchTerm }) => {
+// const ProjectCard = ({ searchTerm }) => {
+const ProjectCard = () => {
+
     const [projects, setProjects] = useState([]);
 
     useEffect(() => {
         // Fonction pour récupérer les données depuis Strapi
         const fetchProjects = async () => {
             try {
-                const response = await axios.get(`${process.env.REACT_APP_STRAPI_API_URL}/api/projets?populate=*&filters[Titre][$contains]=${searchTerm}`);
+                const response = await axios.get(`${process.env.REACT_APP_STRAPI_API_URL}/api/projets?populate=*`);
                 setProjects(response.data.data);
             } catch (error) {
                 console.error("Erreur lors de la récupération des projets:", error);
@@ -16,7 +18,9 @@ const ProjectCard = ({ searchTerm }) => {
         };
 
         fetchProjects();
-    }, [searchTerm]);
+    }, []);
+    // }, [searchTerm]);
+
 
     return (
         <div className="project-container">

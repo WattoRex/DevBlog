@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
+import React from 'react';
+
 
 import NavBar from '../components/general/NavBar';
 import Footer from '../components/general/Footer';
 
 import ProjectsGrid from '../components/pageProjets/ProjetcsGrid';
-import SearchBar from '../components/pageArticles/SearchBar';
+// import SearchBar from '../components/pageArticles/SearchBar';
 
 import Bubble from "../components/pageHome/Bubble"
 
@@ -12,12 +14,12 @@ import SEO from "../context/seo";
 
 
 const Projetcs = () => {
-    const [searchTerm, setSearchTerm] = useState('');
+    // const [searchTerm, setSearchTerm] = useState('');
 
-    // Gestion de la bar de recherche
-    const handleSearch = (event) => {
-        setSearchTerm(event.target.value);
-    };
+    // // Gestion de la bar de recherche
+    // const handleSearch = (event) => {
+    //     setSearchTerm(event.target.value);
+    // };
 
     return (
         <div className='pageProjetcs'>
@@ -36,10 +38,11 @@ const Projetcs = () => {
                 <div className='imageBackgroundArticle'>
                     <div className='heroContentContainersArticle'>
                         <p className='heroTextArticle'>Construire le Web, un projet à la fois</p>
-                        <SearchBar searchTerm={searchTerm} onSearch={handleSearch} holderText="Rechercher un projet..." />
+                        {/* <SearchBar searchTerm={searchTerm} onSearch={handleSearch} holderText="Rechercher un projet..." /> */}
                     </div>
                 </div>
-                <ProjectsGrid searchTerm={searchTerm} />
+                <ProjectsGrid />
+                {/* <ProjectsGrid searchTerm={searchTerm} /> */}
 
                 {/* Animation */}
                 <div className='bubbleContainer'>
