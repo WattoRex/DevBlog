@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const LastProjects = () => {
     const [projects, setProjects] = useState([]);
@@ -28,11 +29,13 @@ const LastProjects = () => {
             <h3>Dernier projets :</h3>
             <div className="last-projects">
                 {projects.data.map(project => (
-                    <div key={project.id} className="project">
-                        <div className='project-title'>{project.attributes.Titre}</div>
-                        <img src={`${process.env.REACT_APP_STRAPI_API_URL}${project.attributes.ImageDePresentation.data.attributes.url}`} alt={project.attributes.Titre} />
-                        <p>{project.attributes.Description}</p>
-                    </div>
+                    <Link to={`/projects`} style={{ textDecoration: 'none', color: 'black' }} className="project-link">
+                        <div key={project.id} className="project">
+                            <div className='project-title'>{project.attributes.Titre}</div>
+                            <img src={`${process.env.REACT_APP_STRAPI_API_URL}${project.attributes.ImageDePresentation.data.attributes.url}`} alt={project.attributes.Titre} />
+                            <p>{project.attributes.Description}</p>
+                        </div>
+                    </Link>
                 ))}
             </div>
 

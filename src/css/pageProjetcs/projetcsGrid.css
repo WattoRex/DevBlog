@@ -82,5 +82,6 @@
 @media screen and (min-width: 1025px) {
   .project-container {
     grid-template-columns: repeat(2, 0.75fr);
+    width: 80%;
   }
 }
