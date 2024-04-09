@@ -1,7 +1,7 @@
 import React from 'react';
 
 const PageSizeSelector = ({ selectedPageSize, onPageSizeChange }) => {
-    const pageSizeOptions = [1, 6, 12, 24]; // Options disponibles pour la taille de page
+    const pageSizeOptions = [6, 12, 24]; // Options disponibles pour la taille de page
 
     return (
         <div className="PageSizeSelector">

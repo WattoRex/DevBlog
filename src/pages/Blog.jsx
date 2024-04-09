@@ -22,7 +22,7 @@ const Blog = () => {
                 title="Manier Valentin - Mes articles"
                 description="Découvrez des articles, tutoriels et astuces sur le développement web dans mon blog. Utilisez la barre de recherche pour trouver des articles spécifiques."
                 keywords="blog, articles, tutoriels, développement web, astuces"
-                canonicalUrl="https://www.votresite.com/blog"
+                canonicalUrl="https://manier-valentin.fr/blog"
             />
 
             <NavBar />

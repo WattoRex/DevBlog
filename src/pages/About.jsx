@@ -21,7 +21,7 @@ const AboutMe = () => {
                 title="Manier Valentin - À propos de moi"
                 description="Découvrez qui je suis, mes différentes compétences en développement front-end et en développement back-end, et comment me contacter."
                 keywords="à propos, développeur web, front-end, back-end, contact, React, JavaScript, CSS, HTML, SEO, composant, Manier, Valentin"
-                canonicalUrl="https://www.votresite.com/about"
+                canonicalUrl="https://manier-valentin.fr/about"
             />
 
             <NavBar />

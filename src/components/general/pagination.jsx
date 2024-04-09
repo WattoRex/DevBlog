@@ -3,7 +3,7 @@
 import React from 'react';
 
 const Pagination = ({ currentPage, totalPages, onPageChange }) => {
-    const pagesToShow = 3; // Nombre de pages à afficher de chaque côté de la page actuelle
+    const pagesToShow = 1; // Nombre de pages à afficher de chaque côté de la page actuelle
 
     const generatePageNumbers = () => {
         const pageNumbers = [];

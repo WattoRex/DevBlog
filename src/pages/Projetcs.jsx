@@ -25,10 +25,10 @@ const Projetcs = () => {
         <div className='pageProjetcs'>
 
             <SEO
-                title="Manier Valentin - Mes Portfolios"
+                title="Manier Valentin - Mon Portfolio"
                 description="Explorez mes réalisations et projets en tant que développeur web. Utilisez la barre de recherche pour trouver des projets spécifiques."
                 keywords="projets, réalisations, développeur web, recherche de projets, React, JavaScript, CSS, HTML, SEO, composant, Manier, Valentin"
-                canonicalUrl="https://www.votresite.com/projets"
+                canonicalUrl="https://manier-valentin.fr/projects"
             />
 
             <NavBar />

@@ -31,7 +31,7 @@ const Playground = () => {
                 title="Manier Valentin - Mon Playground"
                 description="Explorez et testez des composants React dans mon Playground. Utilisez le filtre pour trouver des composants spécifiques."
                 keywords="React, composants, Playground, exploration, card, form, loader, button, tooltip, toggle switch, checkbox, animation, Manier, Valentin"
-                canonicalUrl="https://www.votresite.com/playground"
+                canonicalUrl="https://manier-valentin.fr/playground"
             />
 
             <NavBar />

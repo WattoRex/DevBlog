@@ -20,11 +20,11 @@ const NavBar = () => {
             </div>
             <div className='navMenuContainer'>
                 <ul className='navMenu'>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/projects">Projects</Link></li>
+                    <li><Link to="/">Accueil</Link></li>
+                    <li><Link to="/projects">Projets</Link></li>
                     <li><Link to="/playground">Playground</Link></li>
                     <li><Link to="/blog">Blog</Link></li>
-                    <li><Link to="/about">About</Link></li>
+                    <li><Link to="/about">À propos</Link></li>
                 </ul>
             </div>
             <div className={`hamburger ${isMobileNavActive ? 'hamburger-active' : ''}`} onClick={toggleNav}>

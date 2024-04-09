@@ -20,7 +20,7 @@ const Home = () => {
                 title="Manier Valentin - Développeur Web"
                 description="Découvrez mes compétences et projets en tant que développeur web. Contactez-moi pour toute collaboration ou opportunité."
                 keywords="développeur web, compétences, projets, contact, article, React, JavaScript, CSS, HTML, SEO, composant, Manier, Valentin"
-                canonicalUrl="https://www.votresite.com/"
+                canonicalUrl="https://manier-valentin.fr/"
             />
 
 
