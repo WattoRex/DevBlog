@@ -21,7 +21,7 @@ const LastArticle = () => {
     useEffect(() => {
         async function fetchLastArticle() {
             try {
-                const response = await axios.get(`${process.env.REACT_APP_STRAPI_API_URL}/api/articles?populate=*sort=publishedAt:desc&pagination[pageSize]=1`);
+                const response = await axios.get(`${process.env.REACT_APP_STRAPI_API_URL}/api/articles?populate=*&sort=publishedAt:desc&pagination[pageSize]=1`);
                 setLastArticle(response.data.data[0]);
             } catch (error) {
                 console.error('Error fetching last article:', error);

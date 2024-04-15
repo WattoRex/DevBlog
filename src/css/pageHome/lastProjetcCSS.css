@@ -83,6 +83,10 @@
   margin-top: 1vh;
 }
 
+.codePreview {
+  overflow: auto;
+}
+
 /* Media Query for Desktop */
 @media screen and (min-width: 1024px) {
   .last-css-projects-container {
