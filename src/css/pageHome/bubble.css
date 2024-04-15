@@ -37,104 +37,103 @@
 .bubble:nth-child(2) {
   position: relative;
   zoom: 0.45;
-  left: -1vh; /* Converti de -10px à -1vh */
-  top: -10vh; /* Converti de -100px à -10vh */
+  left: -1vh;
+  top: -10vh;
   animation-delay: -4s;
 }
 
 .bubble:nth-child(3) {
   position: relative;
   zoom: 0.45;
-  right: -8vh; /* Converti de -80px à -8vh */
-  top: -30vh; /* Converti de -300px à -30vh */
-  animation-delay: -6s;
+  right: -8vh;
+  top: -30vh;
 }
 
 .bubble:nth-child(4) {
   position: relative;
   zoom: 0.35;
-  left: -12vh; /* Converti de -120px à -12vh */
-  bottom: -20vh; /* Converti de -200px à -20vh */
+  left: -12vh;
+  bottom: -20vh;
   animation-delay: -3s;
 }
 
 .bubble:nth-child(5) {
   position: relative;
   zoom: 0.5;
-  left: 0; /* Pas de conversion nécessaire pour 0 */
-  top: 20vh; /* Converti de 200px à 20vh */
+  left: 0;
+  top: 20vh;
   animation-delay: -5s;
 }
 
 .bubble:nth-child(6) {
   position: relative;
   zoom: 0.65;
-  right: -8vh; /* Converti de -80px à -8vh */
-  top: 30vh; /* Converti de 300px à 30vh */
+  right: -8vh;
+  top: 30vh;
   animation-delay: -6s;
 }
 
 .bubble:nth-child(7) {
   position: relative;
   zoom: 0.35;
-  left: 7.5vh; /* Converti de 75px à 7.5vh */
-  bottom: -45vh; /* Converti de -450px à -45vh */
+  left: 7.5vh;
+  bottom: -45vh;
   animation-delay: -3s;
 }
 
 .bubble:nth-child(8) {
   position: relative;
   zoom: 0.5;
-  left: 7.5vh; /* Converti de 75px à 7.5vh */
-  top: 27.5vh; /* Converti de 275px à 27.5vh */
+  left: 7.5vh;
+  top: 27.5vh;
   animation-delay: -5s;
 }
 
 .bubble:nth-child(9) {
   position: relative;
   zoom: 0.65;
-  right: -8vh; /* Converti de -80px à -8vh */
-  top: 40vh; /* Converti de 400px à 40vh */
+  right: -8vh;
+  top: 40vh;
   animation-delay: -6s;
 }
 
 .bubble:nth-child(10) {
   position: relative;
   zoom: 0.5;
-  left: -10vh; /* Converti de -100px à -10vh */
-  bottom: -30vh; /* Converti de -300px à -30vh */
+  left: -10vh;
+  bottom: -30vh;
   animation-delay: -3s;
 }
 
 .bubble:nth-child(11) {
   position: relative;
   zoom: 0.75;
-  left: 0; /* Pas de conversion nécessaire pour 0 */
-  top: 42vh; /* Converti de 420px à 42vh */
+  left: 0;
+  top: 42vh;
   animation-delay: -5s;
 }
 
 .bubble:nth-child(12) {
   position: relative;
   zoom: 0.65;
-  right: -8vh; /* Converti de -80px à -8vh */
-  top: 32.5vh; /* Converti de 325px à 32.5vh */
+  right: -8vh;
+  top: 32.5vh;
   animation-delay: -6s;
 }
 
 .bubble:nth-child(13) {
   position: relative;
   zoom: 0.9;
-  left: -3vh; /* Converti de -30px à -3vh */
-  bottom: -30vh; /* Converti de -300px à -30vh */
+  left: -3vh;
+  bottom: -30vh;
   animation-delay: -2s;
 }
 
 .bubble:nth-child(14) {
   position: relative;
   zoom: 0.35;
-  left: 0; /* Pas de conversion nécessaire pour 0 */
-  top: 60vh; /* Converti de 600px à 60vh */
+  left: 0;
+  top: 60vh;
   animation-delay: -5s;
 }
 
