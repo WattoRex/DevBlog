@@ -62,14 +62,25 @@
   border-radius: 6px;
 }
 
+.articleContent h2 {
+  margin-top: 0.6vh;
+  padding-left: 0.4vh;
+  border-left: 4px solid #92c9b1b2;
+  font-size: larger;
+  color: #3ca578;
+}
+
 .articleContent h1,
-.articleContent h2,
+.articleContent h2:not(:first-child),
 .articleContent h3,
 .articleContent h4,
 .articleContent h5,
 .articleContent h6 {
-  margin-top: 0.6vh;
+  margin-top: 2vh;
+  padding-left: 0.4vh;
   border-left: 4px solid #92c9b1b2;
+  font-size: larger;
+  color: #3ca578;
 }
 
 .articleContent ul {
@@ -103,6 +114,10 @@
 
   .articleContent img {
     max-width: 60%;
+  }
+
+  .articleContent .code22 {
+    margin: 2.2vh 2.2vh 2.2vh 2.2vh;
   }
 }
 

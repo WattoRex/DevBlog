@@ -37,7 +37,7 @@ const AllArticles = ({ searchTerm }) => {
 
     const fetchArticles = async () => {
         try {
-            let apiUrl = `${process.env.REACT_APP_STRAPI_API_URL}/api/articles?populate=*`;
+            let apiUrl = `${process.env.REACT_APP_STRAPI_API_URL}/api/articles?populate=*&sort=publishedAt:desc`;
 
             if (searchTerm) {
                 apiUrl += `&filters[Titre][$containsi]=${searchTerm}`;
