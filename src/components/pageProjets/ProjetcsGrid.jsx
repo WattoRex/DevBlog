@@ -33,21 +33,23 @@ const ProjectCard = () => {
                         <h3>{project.attributes.Titre}</h3>
                         <p>{project.attributes.Description}</p>
                         <p>Technologies utilisées: {project.attributes.technologies}</p>
-                        {project.attributes.demoUrl && (
-                            <a href={project.attributes?.demoUrl} target="_blank" rel="noopener noreferrer">
-                                Visiter le site de demonstration
-                            </a>
-                        )}
-                        {project.attributes.url && (
-                            <a href={project.attributes?.url} target="_blank" rel="noopener noreferrer">
-                                Visiter le site
-                            </a>
-                        )}
-                        {project.attributes.github && (
-                            <a href={project.attributes?.github} target="_blank" rel="noopener noreferrer">
-                                Voir sur GitHub
-                            </a>
-                        )}
+                        <div className='project-links'>
+                            {project.attributes.demoUrl && (
+                                <a href={project.attributes?.demoUrl} target="_blank" rel="noopener noreferrer">
+                                    Visiter le site de demonstration
+                                </a>
+                            )}
+                            {project.attributes.url && (
+                                <a href={project.attributes?.url} target="_blank" rel="noopener noreferrer">
+                                    Visiter le site
+                                </a>
+                            )}
+                            {project.attributes.github && (
+                                <a href={project.attributes?.github} target="_blank" rel="noopener noreferrer">
+                                    Voir sur GitHub
+                                </a>
+                            )}
+                        </div>
                     </div>
                 ))
             )}

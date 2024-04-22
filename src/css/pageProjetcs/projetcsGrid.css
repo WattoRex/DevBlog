@@ -30,6 +30,15 @@
   margin-left: 0vw;
 }
 
+.project-links {
+  display: flex;
+  flex-direction: row;
+}
+
+.project-links a {
+  width: 100%;
+}
+
 .project-Card {
   display: flex;
   flex-direction: column;
