@@ -53,7 +53,7 @@ const LastArticle = () => {
                         <p className='tags'>{lastArticle.attributes.tags.data.map(tag => tag.attributes.TagName).join(', ')}</p>
                         <Link to={`/blog/${lastArticle.attributes.slug}`} className="read-more">Lire l'article</Link>
                     </div>
-                    <img src={`${process.env.REACT_APP_STRAPI_API_URL}${lastArticle.attributes.ImageDePresentation.data.attributes.url}`} alt={lastArticle.title} />
+                    <img src={`${process.env.REACT_APP_STRAPI_API_URL}${lastArticle.attributes.ImageDePresentation.data.attributes.url}`} alt={lastArticle.attributes.ImageDePresentation.data.attributes.alternativeText} />
                 </div>
             </div>
         );
@@ -65,7 +65,7 @@ const LastArticle = () => {
                     <div className='last-article-container'>
                         <p className='date'>Le {formatFrenchDate(lastArticle.attributes.publishedAt)}</p>
                         <h5>{lastArticle.attributes.Titre}</h5>
-                        <img src={`${process.env.REACT_APP_STRAPI_API_URL}${lastArticle.attributes.ImageDePresentation.data.attributes.url}`} alt={lastArticle.title} />
+                        <img src={`${process.env.REACT_APP_STRAPI_API_URL}${lastArticle.attributes.ImageDePresentation.data.attributes.url}`} alt={lastArticle.attributes.ImageDePresentation.data.attributes.alternativeText} />
                         <p className='description'>{lastArticle.attributes.Description}</p>
                         <p className='tags'>{lastArticle.attributes.tags.data.map(tag => tag.attributes.TagName).join(', ')}</p>
                         <Link to={`/blog/${lastArticle.attributes.slug}`} className="read-more">Lire l'article</Link>

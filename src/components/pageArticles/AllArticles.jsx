@@ -80,14 +80,14 @@ const AllArticles = ({ searchTerm }) => {
                         <p className='date'>Le {formatFrenchDate(article.attributes.publishedAt)}</p>
                         <h5>{article.attributes.Titre}</h5>
                         {windowWidth < 1024 && (
-                            <img src={`${process.env.REACT_APP_STRAPI_API_URL}${article.attributes.ImageDePresentation.data.attributes.url}`} alt={article.title} />
+                            <img src={`${process.env.REACT_APP_STRAPI_API_URL}${article.attributes.ImageDePresentation.data.attributes.url}`} alt={article.attributes.ImageDePresentation.data.attributes.alternativeText} />
                         )}
                         <p className='description'>{article.attributes.Description}</p>
                         <p className='tags'>{article.attributes.tags.data.map(tag => tag.attributes.TagName).join(', ')}</p>
                         <Link to={`/blog/${article.attributes.slug}`} className="read-more">Lire l'article</Link>
                     </div>
                     {windowWidth > 1024 && (
-                        <img src={`${process.env.REACT_APP_STRAPI_API_URL}${article.attributes.ImageDePresentation.data.attributes.url}`} alt={article.title} />
+                        <img src={`${process.env.REACT_APP_STRAPI_API_URL}${article.attributes.ImageDePresentation.data.attributes.url}`} alt={article.attributes.ImageDePresentation.data.attributes.alternativeText} />
                     )}
                 </div>
             ))}
